@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import md5 from "md5";
 import Home from "./pages/Home";
 import ComicPage from "./pages/ComicPage";
+import FourOhFour from "./pages/FourOhFour";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import fetchData from "./utils/fetchData";
 
 const baseURL =
@@ -32,13 +35,13 @@ const App = () => {
   return (
     <Router>
       <AppContext.Provider value={{ comics }}>
-        {/* <Navigation /> */}
+        <Header />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/comic/:comicIndex" component={ComicPage} />
-          {/* <Route path="*" component={FourOhFour} /> */}
+          <Route path="*" component={FourOhFour} />
         </Switch>
-        {/* <Footer /> */}
+        <Footer />
       </AppContext.Provider>
     </Router>
   );

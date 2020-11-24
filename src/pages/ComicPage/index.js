@@ -1,24 +1,32 @@
 import React, { useState, useEffect, useContext } from "react";
+import FourOhFour from "../FourOhFour";
 import { AppContext } from "./../../App";
 
 const ComicPage = (props) => {
   const { comics } = useContext(AppContext);
+  const [isURLValid, setIsURLValid] = useState();
   const [comicInfo, setComicInfo] = useState({});
 
   const comicIndex = props.match.params.comicIndex;
+
+  useEffect(() => {
+    comicIndex >= 0 && comicIndex < 20
+      ? setIsURLValid(true)
+      : setIsURLValid(false);
+  }, [comicIndex]);
 
   function composeComicInfo() {
     const title = comics[comicIndex].title;
     const description = getDescription();
     const characters = getCharacters();
-    const link = getLink();
+    const shopLink = getShopLink();
     const image = getImage();
 
     const allInfo = {
       title: title,
       description: description,
       characters: characters,
-      link: link,
+      shopLink: shopLink,
       image: image,
     };
 
@@ -36,12 +44,11 @@ const ComicPage = (props) => {
     const items = comics[comicIndex].characters.items.map((el) => {
       return el.name;
     });
-    const str = items.join(", ")
+    const str = items.join(", ");
     return str;
   }
 
-  function getLink() {
-    //Changes "http" to "https". Platforms to deploy code (heroku, Vercel) only accept "https":
+  function getShopLink() {
     const link = comics[comicIndex].urls[0].url;
     const newLink = changeProtocol(link);
     return newLink;
@@ -71,19 +78,28 @@ const ComicPage = (props) => {
   }
 
   useEffect(() => {
-    if (!comics[comicIndex]) return;
+    if (!isURLValid) return;
     composeComicInfo();
   }, [comics]);
 
   return (
     <div>
-      {comics[comicIndex] && (
+      {!isURLValid && <FourOhFour />}
+      {isURLValid && (
         <div>
-          <a href={comicInfo.link} target="_blank" rel="noopener noreferrer">
+          <a
+            href={comicInfo.shopLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <h2>{comicInfo.title}</h2>
           </a>
           <div>
-            <a href={comicInfo.link} target="_blank" rel="noopener noreferrer">
+            <a
+              href={comicInfo.shopLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src={comicInfo.image} alt="Spider-man comic" />
             </a>
             <p>{comicInfo.description}</p>
