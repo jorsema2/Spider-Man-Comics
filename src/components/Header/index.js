@@ -1,13 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Container, ExternalLink, HomeButton } from "./style";
+import SpiderIcon from "../../assets/svg/spider-icon.svg";
 
 const Header = () => {
   return (
-    <div>
-      <Link to="/">
-        <h3>Home</h3>
-      </Link>
-    </div>
+    <Container>
+      <ExternalLink to="/">
+        <img src={SpiderIcon} alt={"Spider-man icon"} />
+        <HomeButton>Home</HomeButton>
+      </ExternalLink>
+    </Container>
   );
 };
 

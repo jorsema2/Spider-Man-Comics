@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import FourOhFour from "../FourOhFour";
 import { AppContext } from "./../../App";
+import { StyledLayout, ComicContainer, ComicInformation, TextContainer } from "./style";
 
 const ComicPage = (props) => {
   const { comics } = useContext(AppContext);
@@ -13,7 +14,12 @@ const ComicPage = (props) => {
     comicIndex >= 0 && comicIndex < 20
       ? setIsURLValid(true)
       : setIsURLValid(false);
-  }, [comicIndex]);
+  }, [comicInfo]);
+
+  useEffect(() => {
+    if (!comics.length > 0) return;
+    composeComicInfo();
+  }, [comics]);
 
   function composeComicInfo() {
     const title = comics[comicIndex].title;
@@ -77,16 +83,11 @@ const ComicPage = (props) => {
     return newLink;
   }
 
-  useEffect(() => {
-    if (!isURLValid) return;
-    composeComicInfo();
-  }, [comics]);
-
   return (
-    <div>
+    <StyledLayout>
       {!isURLValid && <FourOhFour />}
       {isURLValid && (
-        <div>
+        <ComicContainer>
           <a
             href={comicInfo.shopLink}
             target="_blank"
@@ -94,7 +95,7 @@ const ComicPage = (props) => {
           >
             <h2>{comicInfo.title}</h2>
           </a>
-          <div>
+          <ComicInformation>
             <a
               href={comicInfo.shopLink}
               target="_blank"
@@ -102,12 +103,14 @@ const ComicPage = (props) => {
             >
               <img src={comicInfo.image} alt="Spider-man comic" />
             </a>
-            <p>{comicInfo.description}</p>
-            <p>Characters: {comicInfo.characters}</p>
-          </div>
-        </div>
+            <TextContainer>
+              <p>{comicInfo.description}</p>
+              <p>Characters: {comicInfo.characters}</p>
+            </TextContainer>
+          </ComicInformation>
+        </ComicContainer>
       )}
-    </div>
+    </StyledLayout>
   );
 };
 

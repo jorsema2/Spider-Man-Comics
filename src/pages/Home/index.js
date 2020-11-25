@@ -1,24 +1,24 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import { AppContext } from "./../../App";
+import { GridLayout, ExternalLink, ComicTitle } from "./style";
 
 const Home = () => {
   const { comics } = useContext(AppContext);
 
   return (
-    <div>
+    <GridLayout>
       {comics.map((comic, index) => (
         <div key={comic.id}>
-          <Link to={`comic/${index}`}>
+          <ExternalLink to={`comic/${index}`}>
             <img
-              src={comic.thumbnail.path + "/portrait_xlarge.jpg"}
+              src={comic.thumbnail.path + "/portrait_incredible.jpg"}
               alt={comic.title}
             />
-            <h3>{comic.title}</h3>
-          </Link>
+            <ComicTitle>{comic.title}</ComicTitle>
+          </ExternalLink>
         </div>
       ))}
-    </div>
+    </GridLayout>
   );
 };
 

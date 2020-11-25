@@ -1,7 +1,8 @@
 import React from "react";
+import { Container } from "./style";
 
 const Footer = () => (
-    <div>
+    <Container>
         <div>
             <h2>Spider-Man Comics</h2>
             <h4>A React App by Jorge Segura</h4>
@@ -9,7 +10,7 @@ const Footer = () => (
         <div>
             <h3>Data provided by Marvel. © 2014 Marvel</h3>
         </div>
-    </div>
+    </Container>
     );
   
   export default Footer;
