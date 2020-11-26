@@ -1,16 +1,18 @@
 import React from "react";
-import { Container } from "./style";
+import { StyledFooter, Container, AppInfoContainer, APIInfoContainer } from "./style";
 
 const Footer = () => (
+  <StyledFooter>
     <Container>
-        <div>
-            <h2>Spider-Man Comics</h2>
-            <h4>A React App by Jorge Segura</h4>
-        </div>
-        <div>
-            <h3>Data provided by Marvel. © 2014 Marvel</h3>
-        </div>
+      <AppInfoContainer>
+        <h2>Spider-Man Comics</h2>
+        <h4>A React App by Jorge Segura</h4>
+      </AppInfoContainer>
+      <APIInfoContainer>
+        <h3>Data provided by Marvel. © 2014 Marvel</h3>
+      </APIInfoContainer>
     </Container>
-    );
-  
-  export default Footer;
+  </StyledFooter>
+);
+
+export default Footer;

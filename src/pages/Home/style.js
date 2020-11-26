@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 export const GridLayout = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  position: relative;
-  top: 112px;
-  margin: 32px;
+  margin: 128px 32px 32px 32px;
 `;
 
 export const ComicTitle = styled.h3`

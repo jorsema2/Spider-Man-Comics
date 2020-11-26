@@ -1,7 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
 import FourOhFour from "../FourOhFour";
 import { AppContext } from "./../../App";
-import { StyledLayout, ComicContainer, ComicInformation, TextContainer } from "./style";
+import {
+  StyledLayout,
+  ComicContainer,
+  ComicInformation,
+  ImageLink,
+  ComicImage,
+  TextContainer,
+} from "./style";
 
 const ComicPage = (props) => {
   const { comics } = useContext(AppContext);
@@ -66,11 +73,11 @@ const ComicPage = (props) => {
         Math.random() * comics[comicIndex].images.length
       );
       const link =
-        comics[comicIndex].images[index].path + "/portrait_xlarge.jpg";
+        comics[comicIndex].images[index].path + "/portrait_uncanny.jpg";
       const newLink = changeProtocol(link);
       return newLink;
     } else {
-      const link = comics[comicIndex].thumbnail.path + "/portrait_xlarge.jpg";
+      const link = comics[comicIndex].thumbnail.path + "/portrait_uncanny.jpg";
       const newLink = changeProtocol(link);
       return newLink;
     }
@@ -96,13 +103,13 @@ const ComicPage = (props) => {
             <h2>{comicInfo.title}</h2>
           </a>
           <ComicInformation>
-            <a
+            <ImageLink
               href={comicInfo.shopLink}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={comicInfo.image} alt="Spider-man comic" />
-            </a>
+              <ComicImage src={comicInfo.image} alt="Spider-man comic" />
+            </ImageLink>
             <TextContainer>
               <p>{comicInfo.description}</p>
               <p>Characters: {comicInfo.characters}</p>
