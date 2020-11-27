@@ -10,21 +10,37 @@ export const ComicContainer = styled.div`
   margin: 6rem auto 2rem;
 `;
 
+export const TitleLink = styled.a`
+  color: black;
+  text-decoration: none;
+`;
+
 export const ComicInformation = styled.div`
   display: flex;
   align-items: start;
+  @media (orientation: portrait) {
+    flex-direction: column;
+  }
 `;
 
 export const ImageLink = styled.a`
   width: 50%;
+  @media (orientation: portrait) {
+    width: 100%;
+  }
 `;
 
 export const ComicImage = styled.img`
   width: 80%;
   margin-left: 0;
+  @media (orientation: portrait) {
+    width: 100%;
+  }
 `;
 
 export const TextContainer = styled.div`
-  max-width: 66.66%;
   width: 50%;
+  @media (orientation: portrait) {
+    width: 100%;
+  }
 `;

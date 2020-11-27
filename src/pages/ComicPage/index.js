@@ -4,6 +4,7 @@ import { AppContext } from "./../../App";
 import {
   StyledLayout,
   ComicContainer,
+  TitleLink,
   ComicInformation,
   ImageLink,
   ComicImage,
@@ -95,13 +96,13 @@ const ComicPage = (props) => {
       {!isURLValid && <FourOhFour />}
       {isURLValid && (
         <ComicContainer>
-          <a
+          <TitleLink
             href={comicInfo.shopLink}
             target="_blank"
             rel="noopener noreferrer"
           >
             <h2>{comicInfo.title}</h2>
-          </a>
+          </TitleLink>
           <ComicInformation>
             <ImageLink
               href={comicInfo.shopLink}

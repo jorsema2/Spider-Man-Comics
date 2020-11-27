@@ -5,6 +5,15 @@ export const GridLayout = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   margin: 128px 32px 32px 32px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    margin: 64px 0px 0px 0px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 export const ComicTitle = styled.h3`
@@ -15,7 +24,6 @@ export const ExternalLink = styled(Link)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: black;
   text-decoration: none;
   margin: 32px;
 
@@ -29,6 +37,6 @@ export const ExternalLink = styled(Link)`
   }
 
   &:hover ${ComicTitle} {
-    color: #B11313;
+    color: #b11313;
   }
 `;
