@@ -11,6 +11,14 @@ export const Container = styled.div`
   z-index: 9999;
   background-color: #b11313;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 768px) {
+    height: 64px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    height: 64px;
+  }
 `;
 
 export const ExternalLink = styled(Link)`
@@ -22,8 +30,18 @@ export const ExternalLink = styled(Link)`
   text-decoration: none;
 `;
 
+export const StyledIcon = styled.img`
+  @media (max-width: 768px) {
+    height: 48px;
+  }
+`;
+
 export const HomeButton = styled.h1`
   color: white;
   font-size: 3rem;
   margin-left: 16px;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
