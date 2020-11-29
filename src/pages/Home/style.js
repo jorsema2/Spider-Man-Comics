@@ -13,6 +13,12 @@ export const GridLayout = styled.div`
 
   @media (min-width: 768px) and (max-width: 1024px) {
     grid-template-columns: 1fr 1fr;
+    margin: 64px 0px 0px 0px;
+  }
+
+  @media (min-width: 1032px) and (max-width: 1366px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 128px 0px 0px 0px;
   }
 `;
 
@@ -32,6 +38,7 @@ export const ExternalLink = styled(Link)`
     top: 0;
     transition: top ease 0.25s;
   }
+  
   img:hover {
     top: -10px;
   }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import FourOhFour from "../FourOhFour";
 import { AppContext } from "./../../App";
 import {
@@ -9,14 +10,19 @@ import {
   ImageLink,
   ComicImage,
   TextContainer,
+  CharactersSectionTitle,
 } from "./style";
 
 const ComicPage = (props) => {
-  const { comics } = useContext(AppContext);
+  const { comics, setLoadingBarProgress } = useContext(AppContext);
   const [isURLValid, setIsURLValid] = useState();
   const [comicInfo, setComicInfo] = useState({});
 
   const comicIndex = props.match.params.comicIndex;
+
+  useEffect(() => {
+    setLoadingBarProgress(100);
+  }, []);
 
   useEffect(() => {
     comicIndex >= 0 && comicIndex < 20
@@ -30,6 +36,7 @@ const ComicPage = (props) => {
   }, [comics]);
 
   function composeComicInfo() {
+    console.log(isURLValid)
     const title = comics[comicIndex].title;
     const description = getDescription();
     const characters = getCharacters();
@@ -109,11 +116,16 @@ const ComicPage = (props) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <ComicImage src={comicInfo.image} alt="Spider-man comic" />
+              <ComicImage
+                src={comicInfo.image}
+                alt="Spider-man comic"
+                effect="blur"
+              />
             </ImageLink>
             <TextContainer>
               <p>{comicInfo.description}</p>
-              <p>Characters: {comicInfo.characters}</p>
+              <CharactersSectionTitle>Characters:</CharactersSectionTitle>
+              <p>{comicInfo.characters}</p>
             </TextContainer>
           </ComicInformation>
         </ComicContainer>

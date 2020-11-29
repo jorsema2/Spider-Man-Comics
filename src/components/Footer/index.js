@@ -1,12 +1,20 @@
 import React from "react";
-import { StyledFooter, Container, AppInfoContainer, APIInfoContainer, StyledText, Disclaimer } from "./style";
+import {
+  StyledFooter,
+  Container,
+  AppInfoContainer,
+  APIInfoContainer,
+  AppTitle,
+  AppDescription,
+  Disclaimer,
+} from "./style";
 
 const Footer = () => (
   <StyledFooter>
     <Container>
       <AppInfoContainer>
-        <StyledText>Spider-Man Comics</StyledText>
-        <StyledText>A React App by Jorge Segura</StyledText>
+        <AppTitle>SPIDER-MAN COMICS</AppTitle>
+        <AppDescription>A React App by Jorge Segura</AppDescription>
       </AppInfoContainer>
       <APIInfoContainer>
         <Disclaimer>Data provided by Marvel. © 2014 Marvel</Disclaimer>

@@ -22,7 +22,6 @@ export const Container = styled.div`
 `;
 
 export const ExternalLink = styled(Link)`
-  max-width: 256px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -39,8 +38,10 @@ export const StyledIcon = styled.img`
 export const HomeButton = styled.h1`
   color: white;
   font-size: 3rem;
+  font-family: "MarvelFont";
   margin-left: 16px;
-
+  transform: translate(0px, 5px);
+  
   @media (max-width: 768px) {
     font-size: 1.5rem;
   }

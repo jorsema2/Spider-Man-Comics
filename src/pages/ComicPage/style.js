@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export const StyledLayout = styled.div`
   min-height: 90%;
@@ -30,17 +31,22 @@ export const ImageLink = styled.a`
   }
 `;
 
-export const ComicImage = styled.img`
-  width: 80%;
+export const ComicImage = styled(LazyLoadImage)`
   margin-left: 0;
-  @media (orientation: portrait) {
-    width: 100%;
+  width: 100%;
+  @media (max-width: 1024px) and (orientation: landscape) {
+    width: 90%;
   }
 `;
 
 export const TextContainer = styled.div`
   width: 50%;
+  font-size: 1.2rem;
   @media (orientation: portrait) {
     width: 100%;
   }
+`;
+
+export const CharactersSectionTitle = styled.p`
+  font-weight: bold;
 `;
