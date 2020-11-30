@@ -10,7 +10,7 @@ App creada con React. Consta de dos páginas:
 
 Live demo: https://spider-man-comics.herokuapp.com/
 
-### Bibliotecas:
+### Bibliotecas
 
 - React
 - Context API
