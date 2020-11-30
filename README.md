@@ -33,12 +33,12 @@ La URL base de esta API es http://gateway.marvel.com.
 
 1. Abre la terminal y escribe: 
 
-`$ git clone https://github.com/jorsema2/Spider-Man-Comics`
+    `$ git clone https://github.com/jorsema2/Spider-Man-Comics`
 
 2. "cd" para acceder a la nueva carpeta.
 
 3. Instala las dependencias escribiendo: 
 
-`npm install`
+    `npm install`
 
 4. Utiliza `npm start` para que se abra http://localhost:3000.
