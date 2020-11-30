@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
 import { createGlobalStyle } from "styled-components";
 import md5 from "md5";
@@ -64,7 +69,10 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/comic/:comicIndex" component={ComicPage} />
-          <Route path="*" component={FourOhFour} />
+          <Route path="*" component={FourOhFour}>
+            <Redirect to="/404" />
+            <FourOhFour />
+          </Route>
         </Switch>
         <Footer />
       </AppContext.Provider>

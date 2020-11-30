@@ -4,6 +4,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 export const StyledLayout = styled.div`
   min-height: 90%;
   display: flex;
+  justify-content: center;
 `;
 
 export const ComicContainer = styled.div`
