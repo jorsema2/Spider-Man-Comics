@@ -3,6 +3,7 @@ import {
   StyledLayout,
   ErrorContainer,
   NotFoundMessage,
+  InfoContainer,
   ImageLink,
   NotFoundImage,
 } from "./style";
@@ -15,18 +16,22 @@ const FourOhFour = () => {
       <ErrorContainer>
         <NotFoundMessage>NOT FOUND</NotFoundMessage>
       </ErrorContainer>
-      <p>
-        The page that you want to see does not exist. This may be because an
-        invalid URL was introduced.
-      </p>
-      <p>Please, click in the desperate Spidey to go back to home.</p>
-      <ImageLink to="/">
-        <NotFoundImage
-          src={Spidey404}
-          alt="Spider-man 404 meme"
-          effect="blur"
-        />
-      </ImageLink>
+      <InfoContainer>
+        <div>
+          <p>
+            The page that you want to see does not exist. This may be because an
+            invalid URL was introduced.
+          </p>
+          <p>Please, click in the desperate Spidey to go back to home.</p>
+        </div>
+        <ImageLink to="/">
+          <NotFoundImage
+            src={Spidey404}
+            alt="Spider-man 404 meme"
+            effect="blur"
+          />
+        </ImageLink>
+      </InfoContainer>
     </StyledLayout>
   );
 };

@@ -9,6 +9,10 @@ export const StyledLayout = styled.div`
   justify-content: center;
   align-items: center;
   margin: 4px 16px 0px;
+
+  @media (max-height: 425px) {
+    font-size: 1rem;
+  }
 `;
 
 export const ErrorContainer = styled.div`
@@ -23,15 +27,21 @@ export const NotFoundMessage = styled.div`
   font-size: 1.5rem;
 `;
 
+export const InfoContainer = styled.div`
+  @media (orientation: landscape) {
+    display: flex;
+  }
+`;
+
 export const ImageLink = styled(Link)`
   display: flex;
   justify-content: center;
+
+  span {
+    width: 50%;
+  }
 `;
 
 export const NotFoundImage = styled(LazyLoadImage)`
-  width: 70%;
-  
-  img {
-    width: 70%;
-  }
+  width: 100%;
 `;

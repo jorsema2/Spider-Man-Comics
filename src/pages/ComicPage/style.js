@@ -1,10 +1,11 @@
 import styled from "styled-components";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export const StyledLayout = styled.div`
   min-height: 90%;
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
 
 export const ComicContainer = styled.div`
@@ -30,14 +31,14 @@ export const ImageLink = styled.a`
   @media (orientation: portrait) {
     width: 100%;
   }
+  span {
+    width: 90%;
+  }
 `;
 
 export const ComicImage = styled(LazyLoadImage)`
   margin-left: 0;
   width: 100%;
-  @media (max-width: 1024px) and (orientation: landscape) {
-    width: 90%;
-  }
 `;
 
 export const TextContainer = styled.div`

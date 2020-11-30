@@ -36,7 +36,7 @@ const ComicPage = (props) => {
   }, [comics]);
 
   function composeComicInfo() {
-    if(!comics[comicIndex]) return;
+    if (!comics[comicIndex]) return;
     const title = comics[comicIndex].title;
     const description = getDescription();
     const characters = getCharacters();

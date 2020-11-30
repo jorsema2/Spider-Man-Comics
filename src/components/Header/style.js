@@ -39,6 +39,7 @@ export const HomeButton = styled.h1`
   color: white;
   font-size: 3rem;
   font-family: "MarvelFont";
+  letter-spacing: 2px;
   margin-left: 16px;
   transform: translate(0px, 5px);
   

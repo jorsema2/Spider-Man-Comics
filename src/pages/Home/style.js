@@ -5,6 +5,7 @@ export const GridLayout = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   margin: 128px 32px 32px 32px;
+  min-height: 90%;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
