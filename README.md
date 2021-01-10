@@ -27,7 +27,7 @@ In my case, I had difficulties to find information about how to use the images o
 
 The base URL for this API is http://gateway.marvel.com.
 
-### To execute the API locally
+### To execute the APP locally
 
 1. Open terminal and write: 
 
