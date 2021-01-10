@@ -1,16 +1,14 @@
-
-
 ## SPIDER-MAN COMICS
 
-App creada con React. Consta de dos páginas:
+App created with React Hooks. It's composed by two pages:
 
-1. Master: presenta una lista de cómics de Spider-man.
+1. Master: presents a list of Spider-Man Comics.
 
-2. Detail: muestra la información del cómic escogido.
+2. Detail: shows information of the chosen comic.
 
 Live demo: https://spider-man-comics.herokuapp.com/
 
-### Bibliotecas
+### Technologies
 
 - React
 - Context API
@@ -21,24 +19,24 @@ Live demo: https://spider-man-comics.herokuapp.com/
 
 ### API
 
-Utiliza la API [Developer Marvel](https://developer.marvel.com/), la cual ofrece información sobre los cómics de Marvel.
+It uses the API [Developer Marvel](https://developer.marvel.com/), which offers information about Marvel comics.
 
-[Aquí](http://developer.marvel.com) puedes acceder a su documentación y [aquí](http://developer.marvel.com) puedes conseguir las keys para acceder a la API.
+[Here](http://developer.marvel.com) you can access to its documentation and get keys for the API.
 
-En mi caso, tuve dificultad para encontrar información sobre cómo usar las imágenes de la API. Puedes encontrar la documentación al respecto [aquí](https://developer.marvel.com/documentation/images).
+In my case, I had difficulties to find information about how to use the images of the API. You can find documentation about it [here](https://developer.marvel.com/documentation/images).
 
-La URL base de esta API es http://gateway.marvel.com.
+The base URL for this API is http://gateway.marvel.com.
 
-### Para ejecutar la App localmente
+### To execute the API locally
 
-1. Abre la terminal y escribe: 
+1. Open terminal and write: 
 
     `$ git clone https://github.com/jorsema2/Spider-Man-Comics`
 
-2. "cd" para acceder a la nueva carpeta.
+2. "cd" to access the new folder.
 
-3. Instala las dependencias escribiendo: 
+3. Install dependencies by writing: 
 
     `npm install`
 
-4. Utiliza `npm start` para que se abra http://localhost:3000.
+4. Use `npm start` to launch http://localhost:3000.
