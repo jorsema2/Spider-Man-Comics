@@ -28,16 +28,20 @@ body {
 }
 `;
 
+
+console.log(process.env.REACT_APP_NOT_SECRET_CODE)
+const API_PUBLIC_KEY = process.env.REACT_APP_PUBLIC_KEY;
+const API_PRIVATE_KEY = process.env.REACT_APP_PRIVATE_KEY;
+
+console.log(API_PUBLIC_KEY)
+console.log(API_PRIVATE_KEY)
+
 const baseURL =
   "https://gateway.marvel.com/v1/public/characters/1009610/comics?";
 
-const publicKey = "37a930e399da50a992084e08c9ff9554";
+const hash = md5("1" + API_PRIVATE_KEY + API_PUBLIC_KEY);
 
-const privateKey = "6ab7bfd1fe702b3978ab975a02aed5f10c734a67";
-
-const hash = md5("1" + privateKey + publicKey);
-
-const completeKey = `ts=1&apikey=${publicKey}&hash=${hash}`;
+const completeKey = `ts=1&apikey=${API_PUBLIC_KEY}&hash=${hash}`;
 
 export const AppContext = React.createContext();
 
